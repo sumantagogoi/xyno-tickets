@@ -35,7 +35,7 @@ class Ticket (models.Model):
 
 
 class TSaleCounter(models.Model):
-    ticket = models.ForeignKey(Ticket,unique=True, on_delete=models.DO_NOTHING)  
+    ticket = models.OneToOneField(Ticket, on_delete=models.DO_NOTHING)  
     number_sold = models.IntegerField()
 
 
