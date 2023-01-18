@@ -19,7 +19,7 @@ class Customer(models.Model):
 
 
 class Event(models.Model):
-    client = models.ForeignKey(Client, on_delete=DO_NOTHING)  
+    client = models.ForeignKey(Client, on_delete=models.DO_NOTHING)  
     name = models.CharField(max_length=100)
     event_creative = models.ImageField()
     start_date = models.DateTimeField()
@@ -28,21 +28,21 @@ class Event(models.Model):
 
 
 class Ticket (models.Model):
-    event = models.ForeignKey(Event, on_delete=DO_NOTHING)  
+    event = models.ForeignKey(Event, on_delete=models.DO_NOTHING)  
     ticket_cat =  models.CharField(max_length=100)
     ticket_price = models.DecimalField(max_digits=10, decimal_places=2)
     max_tickets = models.IntegerField(blank=True,null=True)
 
 
 class TSaleCounter(models.Model):
-    ticket = models.ForeignKey(Ticket,unique=True, on_delete=DO_NOTHING)  
+    ticket = models.ForeignKey(Ticket,unique=True, on_delete=models.DO_NOTHING)  
     number_sold = models.IntegerField()
 
 
 class TSoldData(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    ticket = models.ForeignKey(Ticket, on_delete=DO_NOTHING)  
-    customer =  models.ForeignKey(Customer, on_delete=DO_NOTHING)  
+    ticket = models.ForeignKey(Ticket, on_delete=models.DO_NOTHING)  
+    customer =  models.ForeignKey(Customer, on_delete=models.DO_NOTHING)  
     quantity = models.IntegerField(default = 1)
     txn_details = models.JSONField()
     status = models.CharField(choices=(("claimed", "claimed"),("booked", "booked"),("cancelled", "cancelled"),("refunded", "refunded")))
