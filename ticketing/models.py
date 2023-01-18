@@ -45,5 +45,5 @@ class TSoldData(models.Model):
     customer =  models.ForeignKey(Customer, on_delete=models.DO_NOTHING)  
     quantity = models.IntegerField(default = 1)
     txn_details = models.JSONField()
-    status = models.CharField(choices=(("claimed", "claimed"),("booked", "booked"),("cancelled", "cancelled"),("refunded", "refunded")))
+    status = models.CharField(choices=(("claimed", "claimed"),("booked", "booked"),("cancelled", "cancelled"),("refunded", "refunded")), max_length=50)
 
