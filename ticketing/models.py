@@ -10,7 +10,7 @@ class Client(models.Model):
     address = models.CharField(max_length=300, blank=True,null=True)
     notes = models.CharField(max_length=300, blank=True,null=True)
 
-class Customer(models.Models):
+class Customer(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
     email = models.CharField(max_length=100, blank=True,null=True)
