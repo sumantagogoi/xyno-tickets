@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-58ek&gb-2=!#n!uqpa^0zzk7%)4wt-a_*9&xk86n*u&)dr$jyg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['tickets.xynocast.com']
 
 
 # Application definition
